@@ -3,7 +3,7 @@ const Menu23 = () => {
 		<div className="card content-box">
 			<span className="text">Menu23 🍓🍇🍈🍉</span>
 		</div>
-	);
-};
+	)
+}
 
-export default Menu23;
+export default Menu23

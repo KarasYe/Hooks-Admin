@@ -1,34 +1,34 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import { EChartsOption } from "echarts";
-import man from "../images/man.png";
-import woman from "../images/woman.png";
-import "./MaleFemaleRatioChart.less";
+import { useEcharts } from '@/hooks/useEcharts'
+import { EChartsOption } from 'echarts'
+import man from '../images/man.png'
+import woman from '../images/woman.png'
+import './MaleFemaleRatioChart.less'
 
 interface ChartProp {
-	man: number;
-	woman: number;
+	man: number
+	woman: number
 }
 const MaleFemaleRatioChart = () => {
 	let data: ChartProp = {
 		man: 0.6,
 		woman: 0.4
-	};
+	}
 	const option: EChartsOption = {
 		xAxis: {
-			type: "value",
+			type: 'value',
 			show: false
 		},
 		grid: {
 			left: 0,
-			top: "30px",
+			top: '30px',
 			bottom: 0,
 			right: 0
 		},
 		yAxis: [
 			{
-				type: "category",
-				position: "left",
-				data: ["男生"],
+				type: 'category',
+				position: 'left',
+				data: ['男生'],
 				axisTick: {
 					show: false
 				},
@@ -40,9 +40,9 @@ const MaleFemaleRatioChart = () => {
 				}
 			},
 			{
-				type: "category",
-				position: "right",
-				data: ["女士"],
+				type: 'category',
+				position: 'right',
+				data: ['女士'],
 				axisTick: {
 					show: false
 				},
@@ -54,13 +54,13 @@ const MaleFemaleRatioChart = () => {
 					padding: [0, 0, 40, -60],
 					fontSize: 12,
 					lineHeight: 60,
-					color: "rgba(255, 255, 255, 0.9)",
-					formatter: "{value}" + data.woman * 100 + "%",
+					color: 'rgba(255, 255, 255, 0.9)',
+					formatter: '{value}' + data.woman * 100 + '%',
 					rich: {
 						a: {
-							color: "transparent",
+							color: 'transparent',
 							lineHeight: 30,
-							fontFamily: "digital",
+							fontFamily: 'digital',
 							fontSize: 12
 						}
 					}
@@ -69,48 +69,48 @@ const MaleFemaleRatioChart = () => {
 		],
 		series: [
 			{
-				type: "bar",
+				type: 'bar',
 				barWidth: 20,
 				data: [data.man],
 				z: 20,
 				itemStyle: {
 					borderRadius: 10,
-					color: "#007AFE"
+					color: '#007AFE'
 				},
 				label: {
 					show: true,
-					color: "#E7E8ED",
-					position: "insideLeft",
+					color: '#E7E8ED',
+					position: 'insideLeft',
 					offset: [0, -20],
 					fontSize: 12,
 					formatter: () => {
-						return `男士 ${data.man * 100}%`;
+						return `男士 ${data.man * 100}%`
 					}
 				}
 			},
 			{
-				type: "bar",
+				type: 'bar',
 				barWidth: 20,
 				data: [1],
-				barGap: "-100%",
+				barGap: '-100%',
 				itemStyle: {
 					borderRadius: 10,
-					color: "#FF4B7A"
+					color: '#FF4B7A'
 				},
 				label: {
 					show: true,
-					color: "#E7E8ED",
-					position: "insideRight",
+					color: '#E7E8ED',
+					position: 'insideRight',
 					offset: [0, -20],
 					fontSize: 12,
 					formatter: () => {
-						return `女士 ${data.woman * 100}%`;
+						return `女士 ${data.woman * 100}%`
 					}
 				}
 			}
 		]
-	};
-	const [echartsRef] = useEcharts(option, data);
+	}
+	const [echartsRef] = useEcharts(option, data)
 	return (
 		<div className="malefemaleRatio-main">
 			<div className="malefemaleRatio-header">
@@ -125,7 +125,7 @@ const MaleFemaleRatioChart = () => {
 			</div>
 			<div ref={echartsRef} className="echarts"></div>
 		</div>
-	);
-};
+	)
+}
 
-export default MaleFemaleRatioChart;
+export default MaleFemaleRatioChart

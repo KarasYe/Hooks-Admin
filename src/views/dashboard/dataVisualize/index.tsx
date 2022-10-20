@@ -1,28 +1,28 @@
-import { Tabs } from "antd";
-import Pie from "./components/pie";
-import Curve from "./components/curve";
-import "./index.less";
-import BookSum from "./images/book-sum.png";
-import AddPerson from "./images/add_person.png";
-import AddTeam from "./images/add_team.png";
-import Today from "./images/today.png";
-import BookSum1 from "./images/book_sum.png";
+import { Tabs } from 'antd'
+import Pie from './components/pie'
+import Curve from './components/curve'
+import './index.less'
+import BookSum from './images/book-sum.png'
+import AddPerson from './images/add_person.png'
+import AddTeam from './images/add_team.png'
+import Today from './images/today.png'
+import BookSum1 from './images/book_sum.png'
 
-const { TabPane } = Tabs;
+const { TabPane } = Tabs
 
 const DataVisualize = () => {
 	const onChange = (key: string) => {
-		console.log(key);
-	};
+		console.log(key)
+	}
 
 	const tabsList = [
-		{ label: "未来7日", name: 1 },
-		{ label: "近七日", name: 2 },
-		{ label: "近一月", name: 3 },
-		{ label: "近三月", name: 4 },
-		{ label: "近半年", name: 5 },
-		{ label: "近一年", name: 6 }
-	];
+		{ label: '未来7日', name: 1 },
+		{ label: '近七日', name: 2 },
+		{ label: '近一月', name: 3 },
+		{ label: '近三月', name: 4 },
+		{ label: '近半年', name: 5 },
+		{ label: '近一年', name: 6 }
+	]
 
 	return (
 		<div className="dataVisualize-box">
@@ -30,7 +30,7 @@ const DataVisualize = () => {
 				<div className="top-title">数据可视化</div>
 				<Tabs defaultActiveKey="1" onChange={onChange}>
 					{tabsList.map(item => {
-						return <TabPane tab={item.label} key={item.name}></TabPane>;
+						return <TabPane tab={item.label} key={item.name}></TabPane>
 					})}
 				</Tabs>
 				<div className="top-content">
@@ -84,7 +84,7 @@ const DataVisualize = () => {
 				<div className="bottom-tabs">
 					<Tabs defaultActiveKey="1" onChange={onChange}>
 						{tabsList.map(item => {
-							return <TabPane tab={item.label} key={item.name}></TabPane>;
+							return <TabPane tab={item.label} key={item.name}></TabPane>
 						})}
 					</Tabs>
 				</div>
@@ -93,7 +93,7 @@ const DataVisualize = () => {
 				</div>
 			</div>
 		</div>
-	);
-};
+	)
+}
 
-export default DataVisualize;
+export default DataVisualize

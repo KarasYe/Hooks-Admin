@@ -1,12 +1,13 @@
-import welcome from "@/assets/images/welcome01.png";
-import "./index.less";
+import { Card } from 'antd'
+import welcome from '@/assets/images/welcome01.png'
+import './index.less'
 
 const Home = () => {
 	return (
-		<div className="home card">
+		<Card className="home">
 			<img src={welcome} alt="welcome" />
-		</div>
-	);
-};
+		</Card>
+	)
+}
 
-export default Home;
+export default Home

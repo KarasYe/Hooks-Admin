@@ -1,39 +1,39 @@
-import { Button, Form, Input, Select, Space, message } from "antd";
-import "./index.less";
+import { Button, Form, Input, Select, Space, message } from 'antd'
+import './index.less'
 
 const BasicForm = () => {
-	const { Option } = Select;
-	const [form] = Form.useForm();
+	const { Option } = Select
+	const [form] = Form.useForm()
 
 	const onGenderChange = (value: string) => {
 		switch (value) {
-			case "male":
-				form.setFieldsValue({ note: "Hi, man!" });
-				return;
-			case "female":
-				form.setFieldsValue({ note: "Hi, lady!" });
-				return;
-			case "other":
-				form.setFieldsValue({ note: "Hi there!" });
+			case 'male':
+				form.setFieldsValue({ note: 'Hi, man!' })
+				return
+			case 'female':
+				form.setFieldsValue({ note: 'Hi, lady!' })
+				return
+			case 'other':
+				form.setFieldsValue({ note: 'Hi there!' })
 		}
-	};
+	}
 
 	const onFinish = (values: any) => {
-		message.success("提交的数据为 : " + JSON.stringify(values));
-		console.log(JSON.stringify(values));
-	};
+		message.success('提交的数据为 : ' + JSON.stringify(values))
+		console.log(JSON.stringify(values))
+	}
 
 	const onReset = () => {
-		form.resetFields();
-	};
+		form.resetFields()
+	}
 
 	const onFill = () => {
 		form.setFieldsValue({
-			user: "mark",
-			note: "Hello world!",
-			gender: "male"
-		});
-	};
+			user: 'mark',
+			note: 'Hello world!',
+			gender: 'male'
+		})
+	}
 
 	return (
 		<div className="card content-box">
@@ -61,12 +61,12 @@ const BasicForm = () => {
 						</Button>
 						<Button type="link" htmlType="button" onClick={onFill}>
 							Fill form
-						</Button>{" "}
+						</Button>{' '}
 					</Space>
 				</Form.Item>
 			</Form>
 		</div>
-	);
-};
+	)
+}
 
-export default BasicForm;
+export default BasicForm

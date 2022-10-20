@@ -1,60 +1,60 @@
 const steps = [
 	{
-		element: "#antd-button",
+		element: '#antd-button',
 		popover: {
-			title: "Guide Button",
-			description: "Open && Close Guide",
-			position: "bottom"
+			title: 'Guide Button',
+			description: 'Open && Close Guide',
+			position: 'bottom'
 		}
 	},
 	{
-		element: "#isCollapse",
+		element: '#isCollapse',
 		popover: {
-			title: "Collapse Icon",
-			description: "Open && Close sidebar",
-			position: "bottom"
+			title: 'Collapse Icon',
+			description: 'Open && Close sidebar',
+			position: 'bottom'
 		}
 	},
 	{
-		element: ".ant-breadcrumb",
+		element: '.ant-breadcrumb',
 		popover: {
-			title: "Breadcrumb",
-			description: "Indicate the current page location",
-			position: "right"
+			title: 'Breadcrumb',
+			description: 'Indicate the current page location',
+			position: 'right'
 		}
 	},
 	{
-		element: ".icon-contentright",
+		element: '.icon-contentright',
 		popover: {
-			title: "Switch Assembly Size",
-			description: "Switch the system size",
-			position: "left"
+			title: 'Switch Assembly Size',
+			description: 'Switch the system size',
+			position: 'left'
 		}
 	},
 	{
-		element: ".icon-zhongyingwen",
+		element: '.icon-zhongyingwen',
 		popover: {
-			title: "Switch Language",
-			description: "Switch the system language",
-			position: "left"
+			title: 'Switch Language',
+			description: 'Switch the system language',
+			position: 'left'
 		}
 	},
 	{
-		element: ".icon-zhuti",
+		element: '.icon-zhuti',
 		popover: {
-			title: "Setting Layout",
-			description: "Customize settings layout",
-			position: "left"
+			title: 'Setting Layout',
+			description: 'Customize settings layout',
+			position: 'left'
 		}
 	},
 	{
-		element: ".icon-fangda",
+		element: '.icon-fangda',
 		popover: {
-			title: "Full Screen",
-			description: "Full Screen, Exit The Full Screen Page",
-			position: "left"
+			title: 'Full Screen',
+			description: 'Full Screen, Exit The Full Screen Page',
+			position: 'left'
 		}
 	}
-];
+]
 
-export default steps;
+export default steps

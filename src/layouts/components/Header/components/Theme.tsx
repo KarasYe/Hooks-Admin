@@ -1,40 +1,57 @@
-import { Drawer, Divider, Switch } from "antd";
-import { useState } from "react";
-import { connect } from "react-redux";
-import { FireOutlined, SettingOutlined } from "@ant-design/icons";
-import { setThemeConfig } from "@/redux/modules/global/action";
-import { updateCollapse } from "@/redux/modules/menu/action";
-import SwitchDark from "@/components/SwitchDark";
+import { Drawer, Divider, Switch } from 'antd'
+// import { SketchPicker } from 'react-color'
+import { useState } from 'react'
+import { connect } from 'react-redux'
+import { FireOutlined, SettingOutlined } from '@ant-design/icons'
+import { setThemeConfig } from '@/redux/modules/global/action'
+import { updateCollapse } from '@/redux/modules/menu/action'
+import SwitchDark from '@/components/SwitchDark'
+// import varColor from '@/styles/var.module.less'
 
 const Theme = (props: any) => {
-	const [visible, setVisible] = useState<boolean>(false);
-	const { setThemeConfig, updateCollapse } = props;
-	const { isCollapse } = props.menu;
-	const { themeConfig } = props.global;
-	const { weakOrGray, breadcrumb, tabs, footer } = themeConfig;
+	const [visible, setVisible] = useState<boolean>(false)
+	const { setThemeConfig, updateCollapse } = props
+	const { isCollapse } = props.menu
+	const { themeConfig } = props.global
+	const { weakOrGray, breadcrumb, tabs, footer } = themeConfig
+
+	// const [color, setColor] = useState({
+	// 	primaryColor: varColor.primaryColor
+	// })
+
+	// const onColorChange = (nextColor: Partial<typeof color>) => {
+	// 	const mergedNextColor = {
+	// 		...color,
+	// 		...nextColor
+	// 	}
+	// 	setColor(mergedNextColor)
+	// 	ConfigProvider.config({
+	// 		theme: mergedNextColor
+	// 	})
+	// }
 
 	const setWeakOrGray = (checked: boolean, theme: string) => {
-		if (checked) return setThemeConfig({ ...themeConfig, weakOrGray: theme });
-		setThemeConfig({ ...themeConfig, weakOrGray: "" });
-	};
+		if (checked) return setThemeConfig({ ...themeConfig, weakOrGray: theme })
+		setThemeConfig({ ...themeConfig, weakOrGray: '' })
+	}
 
 	const onChange = (checked: boolean, keyName: string) => {
-		return setThemeConfig({ ...themeConfig, [keyName]: !checked });
-	};
+		return setThemeConfig({ ...themeConfig, [keyName]: checked })
+	}
 
 	return (
 		<>
 			<i
 				className="icon-style iconfont icon-zhuti"
 				onClick={() => {
-					setVisible(true);
+					setVisible(true)
 				}}
 			></i>
 			<Drawer
 				title="布局设置"
 				closable={false}
 				onClose={() => {
-					setVisible(false);
+					setVisible(false)
 				}}
 				visible={visible}
 				width={320}
@@ -51,21 +68,33 @@ const Theme = (props: any) => {
 				<div className="theme-item">
 					<span>灰色模式</span>
 					<Switch
-						checked={weakOrGray === "gray"}
+						checked={weakOrGray === 'gray'}
 						onChange={e => {
-							setWeakOrGray(e, "gray");
+							setWeakOrGray(e, 'gray')
 						}}
 					/>
 				</div>
 				<div className="theme-item">
 					<span>色弱模式</span>
 					<Switch
-						checked={weakOrGray === "weak"}
+						checked={weakOrGray === 'weak'}
 						onChange={e => {
-							setWeakOrGray(e, "weak");
+							setWeakOrGray(e, 'weak')
 						}}
 					/>
 				</div>
+				{/* <div className="theme-item">
+					<span>主题色</span>
+					<SketchPicker
+						presetColors={['#1890ff', '#25b864', '#ff6f00']}
+						color={color.primaryColor}
+						onChange={({ hex }) => {
+							onColorChange({
+								primaryColor: hex
+							})
+						}}
+					/>
+				</div> */}
 				<br />
 				{/* 界面设置 */}
 				<Divider className="divider">
@@ -77,42 +106,42 @@ const Theme = (props: any) => {
 					<Switch
 						checked={isCollapse}
 						onChange={e => {
-							updateCollapse(e);
+							updateCollapse(e)
 						}}
 					/>
 				</div>
 				<div className="theme-item">
 					<span>面包屑导航</span>
 					<Switch
-						checked={!breadcrumb}
+						checked={breadcrumb}
 						onChange={e => {
-							onChange(e, "breadcrumb");
+							onChange(e, 'breadcrumb')
 						}}
 					/>
 				</div>
 				<div className="theme-item">
 					<span>标签栏</span>
 					<Switch
-						checked={!tabs}
+						checked={tabs}
 						onChange={e => {
-							onChange(e, "tabs");
+							onChange(e, 'tabs')
 						}}
 					/>
 				</div>
 				<div className="theme-item">
 					<span>页脚</span>
 					<Switch
-						checked={!footer}
+						checked={footer}
 						onChange={e => {
-							onChange(e, "footer");
+							onChange(e, 'footer')
 						}}
 					/>
 				</div>
 			</Drawer>
 		</>
-	);
-};
+	)
+}
 
-const mapStateToProps = (state: any) => state;
-const mapDispatchToProps = { setThemeConfig, updateCollapse };
-export default connect(mapStateToProps, mapDispatchToProps)(Theme);
+const mapStateToProps = (state: any) => state
+const mapDispatchToProps = { setThemeConfig, updateCollapse }
+export default connect(mapStateToProps, mapDispatchToProps)(Theme)

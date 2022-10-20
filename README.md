@@ -1,3 +1,11 @@
+# Green-Admin 🚀
+- fork [Hooks Admin](https://github.com/HalseySpicy/Hooks-Admin)
+## 基础改进 📚
+- 🚀 新增系统设置模块(用户，角色，权限，菜单管理🤣)
+- 🚀 统一RESTful接口风格，标准get，post，delete，put
+- 🚀 优化改进AxiosCanceler状态
+- 🚀 后端采取go fiber + gorm技术框架
+
 # Hooks-Admin 🚀
 
 ### 介绍 📖

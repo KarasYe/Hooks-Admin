@@ -1,10 +1,11 @@
-@import "antd/dist/antd.less";
+@import 'antd/dist/antd.less';
+// @import '../var.less';
 
 /* 自定义 antd 默认样式 */
 @light-bg-color: #ffffff;
 @light-main-bg-color: #f0f2f5;
 @light-border-color: #e4e7ed;
-@light-border-header-color: #f6f6f6;
+@light-border-header-color: #e4e7ed;
 @light-text-color: rgba(0, 0, 0, 0.85);
 @light-shadow-color: 0 0 12px #0000000d;
 @light-scrollbar-bg-color: #dddee0;
@@ -13,7 +14,7 @@
 body {
 	background-color: @light-bg-color !important;
 	#driver-highlighted-element-stage {
-			background-color: #fff !important;
+		background-color: #fff !important;
 	}
 }
 
@@ -43,6 +44,7 @@ body {
 .container {
 	/* sider */
 	.ant-layout-sider {
+		background-color: #fff !important;
 		border-right: 1px solid @light-border-color !important;
 		.ant-menu {
 			&::-webkit-scrollbar {
@@ -53,7 +55,7 @@ body {
 			}
 		}
 		.logo-box {
-			border-bottom: 1px solid #010b14 !important;
+			border-bottom: 1px solid @light-border-color !important;
 		}
 	}
 

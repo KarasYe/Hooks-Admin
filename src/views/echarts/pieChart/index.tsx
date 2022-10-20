@@ -1,18 +1,18 @@
-import { useEcharts } from "@/hooks/useEcharts";
-import * as echarts from "echarts";
+import { useEcharts } from '@/hooks/useEcharts'
+import * as echarts from 'echarts'
 
 const PieChart = () => {
 	let option: echarts.EChartsOption = {
 		tooltip: {
-			trigger: "item",
-			formatter: "{a} <br/>{b} : {c} ({d}%)"
+			trigger: 'item',
+			formatter: '{a} <br/>{b} : {c} ({d}%)'
 		},
 		legend: {
-			left: "center",
-			top: "bottom",
-			data: ["rose 1", "rose 2", "rose 3", "rose 4", "rose 5", "rose 6", "rose 7", "rose 8"],
+			left: 'center',
+			top: 'bottom',
+			data: ['rose 1', 'rose 2', 'rose 3', 'rose 4', 'rose 5', 'rose 6', 'rose 7', 'rose 8'],
 			textStyle: {
-				color: "#a1a1a1"
+				color: '#a1a1a1'
 			}
 		},
 		toolbox: {
@@ -26,11 +26,11 @@ const PieChart = () => {
 		},
 		series: [
 			{
-				name: "Radius Mode",
-				type: "pie",
+				name: 'Radius Mode',
+				type: 'pie',
 				radius: [60, 280],
-				center: ["50%", "50%"],
-				roseType: "radius",
+				center: ['50%', '50%'],
+				roseType: 'radius',
 				itemStyle: {
 					borderRadius: 5
 				},
@@ -43,21 +43,21 @@ const PieChart = () => {
 					}
 				},
 				data: [
-					{ value: 40, name: "rose 1" },
-					{ value: 33, name: "rose 2" },
-					{ value: 28, name: "rose 3" },
-					{ value: 22, name: "rose 4" },
-					{ value: 20, name: "rose 5" },
-					{ value: 15, name: "rose 6" },
-					{ value: 12, name: "rose 7" },
-					{ value: 10, name: "rose 8" }
+					{ value: 40, name: 'rose 1' },
+					{ value: 33, name: 'rose 2' },
+					{ value: 28, name: 'rose 3' },
+					{ value: 22, name: 'rose 4' },
+					{ value: 20, name: 'rose 5' },
+					{ value: 15, name: 'rose 6' },
+					{ value: 12, name: 'rose 7' },
+					{ value: 10, name: 'rose 8' }
 				]
 			}
 		]
-	};
+	}
 
-	const [echartsRef] = useEcharts(option);
-	return <div ref={echartsRef} className="card content-box"></div>;
-};
+	const [echartsRef] = useEcharts(option)
+	return <div ref={echartsRef} className="card content-box"></div>
+}
 
-export default PieChart;
+export default PieChart

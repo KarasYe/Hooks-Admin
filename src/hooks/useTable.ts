@@ -1,3 +1,3 @@
-const useTable = () => {};
+const useTable = () => {}
 
-export default useTable;
+export default useTable

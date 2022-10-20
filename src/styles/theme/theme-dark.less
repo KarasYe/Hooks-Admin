@@ -1,9 +1,11 @@
-@import "antd/dist/antd.dark.less";
+@import 'antd/dist/antd.dark.less';
+// @import 'antd/dist/antd.compact.less';
+// @import '../var.less';
 
 /* 自定义 antd 暗黑模式样式 */
-@dark-main-bg-color: #141414;
+@dark-main-bg-color: #000;
 @dark-bg-color: #1f1f1f;
-@dark-border-color: #414243;
+@dark-border-color: #303030;
 @dark-text-color: #d9d9d9;
 @dark-shadow-color: 5px 5px 15px rgb(255 255 255 / 20%);
 @dark-scrollbar-bg-color: #686868;
@@ -43,6 +45,7 @@ body {
 .container {
 	/* sider */
 	.ant-layout-sider {
+		background-color: @dark-bg-color !important;
 		border-right: 1px solid @dark-border-color !important;
 		.ant-menu {
 			&::-webkit-scrollbar {
@@ -101,5 +104,3 @@ body {
 		}
 	}
 }
-
-

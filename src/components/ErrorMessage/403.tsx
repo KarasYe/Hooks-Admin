@@ -1,13 +1,13 @@
-import { Button, Result } from "antd";
-import { useNavigate } from "react-router-dom";
-import { HOME_URL } from "@/config/config";
-import "./index.less";
+import { Button, Result } from 'antd'
+import { useNavigate } from 'react-router-dom'
+import { HOME_URL } from '@/config/config'
+import './index.less'
 
 const NotAuth = () => {
-	const navigate = useNavigate();
+	const navigate = useNavigate()
 	const goHome = () => {
-		navigate(HOME_URL);
-	};
+		navigate(HOME_URL)
+	}
 	return (
 		<Result
 			status="403"
@@ -19,7 +19,7 @@ const NotAuth = () => {
 				</Button>
 			}
 		/>
-	);
-};
+	)
+}
 
-export default NotAuth;
+export default NotAuth

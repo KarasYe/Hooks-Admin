@@ -64,6 +64,8 @@ module.exports = {
 
 		// react (https://github.com/jsx-eslint/eslint-plugin-react)
 		"react-hooks/rules-of-hooks": "off",
-		"react-hooks/exhaustive-deps": "off"
+		"react-hooks/exhaustive-deps": "off",
+		"react/display-name": "off",
+		"react/prop-types": "off"
 	}
 };

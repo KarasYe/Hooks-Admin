@@ -1,47 +1,48 @@
-import type { SizeType } from "antd/lib/config-provider/SizeContext";
+import type { SizeType } from 'antd/lib/config-provider/SizeContext'
+import { User } from '@/api/interface/index'
 
 /* themeConfigProp */
 export interface ThemeConfigProp {
-	primary: string;
-	isDark: boolean;
-	weakOrGray: string;
-	breadcrumb: boolean;
-	tabs: boolean;
-	footer: boolean;
+	primary: string
+	isDark: boolean
+	weakOrGray: string
+	breadcrumb: boolean
+	tabs: boolean
+	footer: boolean
 }
 
 /* GlobalState */
 export interface GlobalState {
-	token: string;
-	userInfo: any;
-	assemblySize: SizeType;
-	language: string;
-	themeConfig: ThemeConfigProp;
+	token: string
+	userInfo: User.ResList
+	assemblySize: SizeType
+	language: string
+	themeConfig: ThemeConfigProp
 }
 
 /* MenuState */
 export interface MenuState {
-	isCollapse: boolean;
-	menuList: Menu.MenuOptions[];
+	isCollapse: boolean
+	menuList: Menus.MenuOptions[]
 }
 
 /* TabsState */
 export interface TabsState {
-	tabsActive: string;
-	tabsList: Menu.MenuOptions[];
+	tabsActive: string
+	tabsList: Menus.MenuOptions[]
 }
 
 /* BreadcrumbState */
 export interface BreadcrumbState {
 	breadcrumbList: {
-		[propName: string]: any;
-	};
+		[propName: string]: any
+	}
 }
 
 /* AuthState */
 export interface AuthState {
 	authButtons: {
-		[propName: string]: any;
-	};
-	authRouter: string[];
+		[propName: string]: any
+	}
+	authRouter: string[]
 }

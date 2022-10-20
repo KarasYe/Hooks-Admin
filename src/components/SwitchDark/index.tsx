@@ -1,12 +1,12 @@
-import { Switch } from "antd";
-import { connect } from "react-redux";
-import { setThemeConfig } from "@/redux/modules/global/action";
+import { Switch } from 'antd'
+import { connect } from 'react-redux'
+import { setThemeConfig } from '@/redux/modules/global/action'
 
 const SwitchDark = (props: any) => {
-	const { setThemeConfig, themeConfig } = props;
+	const { setThemeConfig, themeConfig } = props
 	const onChange = (checked: boolean) => {
-		setThemeConfig({ ...themeConfig, isDark: checked });
-	};
+		setThemeConfig({ ...themeConfig, isDark: checked })
+	}
 
 	return (
 		<Switch
@@ -16,9 +16,9 @@ const SwitchDark = (props: any) => {
 			unCheckedChildren={<>🌜</>}
 			onChange={onChange}
 		/>
-	);
-};
+	)
+}
 
-const mapStateToProps = (state: any) => state.global;
-const mapDispatchToProps = { setThemeConfig };
-export default connect(mapStateToProps, mapDispatchToProps)(SwitchDark);
+const mapStateToProps = (state: any) => state.global
+const mapDispatchToProps = { setThemeConfig }
+export default connect(mapStateToProps, mapDispatchToProps)(SwitchDark)

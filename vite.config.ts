@@ -25,11 +25,12 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 		css: {
 			preprocessorOptions: {
 				less: {
-					// modifyVars: {
-					// 	"primary-color": "#1DA57A",
-					// },
+					modifyVars: {
+						// "primary-color": "#1DA57A",
+						hack: `true; @import (reference) "@/styles/var.module.less";`,
+					},
 					javascriptEnabled: true,
-					additionalData: `@import "@/styles/var.less";`
+					// additionalData: `@import "@/styles/var.less";`
 				}
 			}
 		},
@@ -43,7 +44,7 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 			// 代理跨域（mock 不需要配置，这里只是个事列）
 			proxy: {
 				"/api": {
-					target: "https://mock.mengxuegu.com/mock/62abda3212c1416424630a45", // easymock
+					target: "http://localhost:3000/api",
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
 				}

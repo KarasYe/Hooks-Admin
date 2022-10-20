@@ -5,11 +5,11 @@ const MyBlog = () => {
 				MyBlog ：
 				<a href="http://www.spicyboy.cn" target="_blank" rel="noreferrer">
 					http://www.spicyboy.cn
-				</a>{" "}
+				</a>{' '}
 				🍒🍉🍊
 			</span>
 		</div>
-	);
-};
+	)
+}
 
-export default MyBlog;
+export default MyBlog
