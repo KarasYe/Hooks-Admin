@@ -70,14 +70,16 @@ const App: React.FC = () => {
 			width: 150,
 			render: record => (
 				<Space size="middle">
-					<Typography.Link onClick={() => handleAdd(record)}>修改</Typography.Link>
+					<Typography.Link disabled onClick={() => handleAdd(record)}>
+						修改
+					</Typography.Link>
 					<Popconfirm
 						title={`确定要删除用户《${record.name}》?`}
 						onConfirm={() => handleDelete(record)}
 						okText="确定"
 						cancelText="取消"
 					>
-						<a href="#">删除</a>
+						<Typography.Link disabled>删除</Typography.Link>
 					</Popconfirm>
 				</Space>
 			)

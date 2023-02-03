@@ -1,72 +1,109 @@
-import { Button, Form, Input, Select, Space, message } from 'antd'
-import './index.less'
+import React, { useState } from 'react'
+import { PlusOutlined } from '@ant-design/icons'
+import {
+	Form,
+	Input,
+	Button,
+	Radio,
+	Select,
+	Cascader,
+	DatePicker,
+	InputNumber,
+	TreeSelect,
+	Switch,
+	Checkbox,
+	Upload,
+	Card
+} from 'antd'
 
-const BasicForm = () => {
-	const { Option } = Select
-	const [form] = Form.useForm()
+const { RangePicker } = DatePicker
+const { TextArea } = Input
 
-	const onGenderChange = (value: string) => {
-		switch (value) {
-			case 'male':
-				form.setFieldsValue({ note: 'Hi, man!' })
-				return
-			case 'female':
-				form.setFieldsValue({ note: 'Hi, lady!' })
-				return
-			case 'other':
-				form.setFieldsValue({ note: 'Hi there!' })
-		}
-	}
-
-	const onFinish = (values: any) => {
-		message.success('提交的数据为 : ' + JSON.stringify(values))
-		console.log(JSON.stringify(values))
-	}
-
-	const onReset = () => {
-		form.resetFields()
-	}
-
-	const onFill = () => {
-		form.setFieldsValue({
-			user: 'mark',
-			note: 'Hello world!',
-			gender: 'male'
-		})
+const FormDisabledDemo: React.FC = () => {
+	const [componentDisabled, setComponentDisabled] = useState<boolean>(true)
+	const onFormLayoutChange = ({ disabled }: { disabled: boolean }) => {
+		setComponentDisabled(disabled)
 	}
 
 	return (
-		<div className="card content-box">
-			<Form form={form} name="control-hooks" onFinish={onFinish} labelCol={{ span: 1 }}>
-				<Form.Item name="user" label="User">
-					<Input placeholder="Please enter a user" />
+		<Card className="basic-form">
+			<Checkbox checked={componentDisabled} onChange={e => setComponentDisabled(e.target.checked)}>
+				Form disabled
+			</Checkbox>
+			<Form
+				labelCol={{ span: 4 }}
+				wrapperCol={{ span: 14 }}
+				layout="horizontal"
+				onValuesChange={onFormLayoutChange}
+				disabled={componentDisabled}
+				style={{ maxWidth: 600 }}
+			>
+				<Form.Item label="Checkbox">
+					<Checkbox>Apple</Checkbox>
+					<Checkbox>banana</Checkbox>
 				</Form.Item>
-				<Form.Item name="note" label="Note">
-					<Input placeholder="Please enter a user note" />
+				<Form.Item label="Radio">
+					<Radio.Group>
+						<Radio value="apple">Apple</Radio>
+						<Radio value="pear">Pear</Radio>
+					</Radio.Group>
 				</Form.Item>
-				<Form.Item name="gender" label="Gender">
-					<Select placeholder="Select a option and change input text above" onChange={onGenderChange} allowClear>
-						<Option value="male">male</Option>
-						<Option value="female">female</Option>
-						<Option value="other">other</Option>
+				<Form.Item label="Input">
+					<Input />
+				</Form.Item>
+				<Form.Item label="Select">
+					<Select>
+						<Select.Option value="demo">Demo</Select.Option>
 					</Select>
 				</Form.Item>
-				<Form.Item wrapperCol={{ offset: 1 }}>
-					<Space>
-						<Button type="primary" htmlType="submit">
-							Submit
-						</Button>
-						<Button htmlType="button" onClick={onReset}>
-							Reset
-						</Button>
-						<Button type="link" htmlType="button" onClick={onFill}>
-							Fill form
-						</Button>{' '}
-					</Space>
+				<Form.Item label="TreeSelect">
+					<TreeSelect treeData={[{ title: 'Light', value: 'light', children: [{ title: 'Bamboo', value: 'bamboo' }] }]} />
+				</Form.Item>
+				<Form.Item label="Cascader">
+					<Cascader
+						options={[
+							{
+								value: 'zhejiang',
+								label: 'Zhejiang',
+								children: [
+									{
+										value: 'hangzhou',
+										label: 'Hangzhou'
+									}
+								]
+							}
+						]}
+					/>
+				</Form.Item>
+				<Form.Item label="DatePicker">
+					<DatePicker />
+				</Form.Item>
+				<Form.Item label="RangePicker">
+					<RangePicker />
+				</Form.Item>
+				<Form.Item label="InputNumber">
+					<InputNumber />
+				</Form.Item>
+				<Form.Item label="TextArea">
+					<TextArea rows={4} />
+				</Form.Item>
+				<Form.Item label="Switch" valuePropName="checked">
+					<Switch />
+				</Form.Item>
+				<Form.Item label="Upload" valuePropName="fileList">
+					<Upload action="/upload.do" listType="picture-card">
+						<div>
+							<PlusOutlined />
+							<div style={{ marginTop: 8 }}>Upload</div>
+						</div>
+					</Upload>
+				</Form.Item>
+				<Form.Item label="Button">
+					<Button>Button</Button>
 				</Form.Item>
 			</Form>
-		</div>
+		</Card>
 	)
 }
 
-export default BasicForm
+export default () => <FormDisabledDemo />

@@ -51,7 +51,7 @@ const App: React.FC = () => {
 						okText="确定"
 						cancelText="取消"
 					>
-						<a href="#">删除</a>
+						<Typography.Link disabled>删除</Typography.Link>
 					</Popconfirm>
 				</Space>
 			)
